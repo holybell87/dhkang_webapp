@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MessageMapper">
+
+	<insert id="create">
+	INSERT INTO
+		tbl_message (targetid, sender, message)
+	VALUES
+		(#{targetid}, #{sender}, #{message})
+	</insert>
+
+	<select id="readMessage" resultType="my.web.domain.MessageVO">
+	SELECT
+		mid,
+		targetid,
+		sender,
+		message,
+		date_format(opendate,"%Y-%m-%d %T") AS opendate,
+		date_format(senddate,"%Y-%m-%d %T") AS senddate
+	FROM
+		tbl_message
+	WHERE
+		mid = #{mid}
+	</select>
+
+	<update id="updateState">
+	UPDATE
+		tbl_message
+	SET
+		opendate = now()
+	WHERE
+		mid = #{mid}
+	</update>
+
+</mapper>
