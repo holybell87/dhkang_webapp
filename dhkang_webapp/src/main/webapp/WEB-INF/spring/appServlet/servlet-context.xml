@@ -29,7 +29,8 @@
 
 	<!-- file upload path -->
 	<beans:bean id="uploadPath" class="java.lang.String">
-		<beans:constructor-arg value="C:\\Workspace_sts\\dhkang_webapp\\src\\main\\webapp\\upload"> </beans:constructor-arg>
+<!-- 		<beans:constructor-arg value="C:\\Workspace_sts\\dhkang_webapp\\src\\main\\webapp\\upload"> </beans:constructor-arg> -->
+		<beans:constructor-arg value="C:\\Users\\ouniwang\\git\\dhkang_webapp\\dhkang_webapp\\src\\main\\webapp\\upload"> </beans:constructor-arg>
 	</beans:bean>
 
 	<beans:bean id="sampleInterceptor" class="my.web.interceptor.SampleInterceptor"></beans:bean>
